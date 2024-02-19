@@ -19,15 +19,19 @@ function HomePage() {
     }
   };
 
+  const handleClickBook = (book) => {
+    console.log("Clicked on book:", book);
+  };
+
   return (
     <div>
       <h1>Search for your book!</h1>
       <div>
         <SearchForm onSearch={handleSearch} />
         {searchResults.map((result) => (
-          <div key={result.key}>
+          <div key={result.key} onClick={() => handleClickBook(result)}>
             <h2>{result.title}</h2>
-            {/* Display other relevant information */}
+            <h4>{result.author_name}</h4>
           </div>
         ))}
       </div>
