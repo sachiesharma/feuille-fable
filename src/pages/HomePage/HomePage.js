@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import axios from "axios";
 
 function HomePage() {
   const [searchResults, setSearchResults] = useState([]);
   const baseUrl = "https://openlibrary.org/search.json";
+  const navigate = useNavigate();
 
   const handleSearch = async (query) => {
     try {
@@ -19,8 +21,9 @@ function HomePage() {
     }
   };
 
-  const handleClickBook = (book) => {
-    console.log("Clicked on book:", book);
+  const handleClickBook = (result) => {
+    console.log("Clicked on book:", result);
+    navigate(`/book-review${result.key}`);
   };
 
   return (
