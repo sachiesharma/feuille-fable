@@ -3,7 +3,6 @@ import "../SearchForm/SearchForm.scss";
 import { useState } from "react";
 
 function SearchForm({ onSearch }) {
-  // const handleSearch = (query) => {};
   const [query, setQuery] = useState("");
 
   const handleSubmit = (event) => {
