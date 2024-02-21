@@ -27,7 +27,7 @@ function HomePage() {
 
   const handleClickBook = (result) => {
     console.log("Clicked on book:", result);
-    navigate(`/book-review/${result.key}`);
+    navigate(`/book-review${result.key}`);
   };
 
   // if (loading) {
@@ -46,6 +46,12 @@ function HomePage() {
             <div key={result.key} onClick={() => handleClickBook(result)}>
               <h2>{result.title}</h2>
               <h4>{result.author_name}</h4>
+              {result.cover_i && ( // Check if cover ID exists
+                <img
+                  src={`https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`}
+                  alt={result.title}
+                />
+              )}
             </div>
           ))}
       </div>
