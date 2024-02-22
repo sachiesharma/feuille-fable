@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../BookReviewPage/BookReviewPage.scss";
+import ReviewForm from "../../components/ReviewForm/ReviewForm";
 
 function BookReviewPage() {
   const { bookId } = useParams();
@@ -54,6 +55,7 @@ function BookReviewPage() {
           />
         </>
       )}
+      <ReviewForm />
     </div>
   );
 }
