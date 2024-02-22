@@ -1,0 +1,14 @@
+// @use "../../styles/colours" as *;
+// @use "../../styles/fonts" as *;
+// @use "../../styles/mixins" as *;
+// @use "../../styles/global.scss" as *;
+
+.search__wrapper {
+  background: url("../../assets/images/Feuille\ Fable\ Hero.svg");
+  background-size: cover;
+  background-position: center center;
+  height: 50vh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

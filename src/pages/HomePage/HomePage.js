@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import axios from "axios";
+import "../HomePage/HomePage.scss";
 
 function HomePage() {
   const [searchResults, setSearchResults] = useState([]);
@@ -36,25 +37,25 @@ function HomePage() {
 
   return (
     <div>
+      <div className="search__wrapper"></div>
       <h1>Search for your book!</h1>
       <p>Search by title, author or ISBN</p>
-      <div>
-        <SearchForm onSearch={handleSearch} />
-        {loading && <p>Loading search results...</p>}
-        {!loading &&
-          searchResults.map((result) => (
-            <div key={result.key} onClick={() => handleClickBook(result)}>
-              <h2>{result.title}</h2>
-              <h4>{result.author_name}</h4>
-              {result.cover_i && ( // Check if cover ID exists
-                <img
-                  src={`https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`}
-                  alt={result.title}
-                />
-              )}
-            </div>
-          ))}
-      </div>
+
+      <SearchForm onSearch={handleSearch} />
+      {loading && <p>Loading search results...</p>}
+      {!loading &&
+        searchResults.map((result) => (
+          <div key={result.key} onClick={() => handleClickBook(result)}>
+            <h2>{result.title}</h2>
+            <h4>{result.author_name}</h4>
+            {result.cover_i && ( // Check if cover ID exists
+              <img
+                src={`https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`}
+                alt={result.title}
+              />
+            )}
+          </div>
+        ))}
     </div>
   );
 }

@@ -18,7 +18,7 @@ function SearchForm({ onSearch }) {
         onChange={(event) => setQuery(event.target.value)}
         placeholder="Search"
       />
-      <h1>HELLO</h1>
+      {/* <h1>HELLO</h1> */}
       <button type="submit">Search</button>
     </form>
   );
