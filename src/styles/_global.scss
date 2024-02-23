@@ -1,6 +1,5 @@
-@use "../../styles/colours" as *;
-@use "../../styles/fonts" as *;
-@use "../../styles/mixins" as *;
+@use "./fonts" as *;
+@use "./mixins" as *;
 
 *,
 *::before,
@@ -62,7 +61,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
-  background-color: $light-grey;
 }
 input {
   margin: 0;

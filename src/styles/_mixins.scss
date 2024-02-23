@@ -1,6 +1,4 @@
-@use "../styles/colours" as *;
-@use "../styles/fonts" as *;
-@use "../styles/global.scss" as *;
+@use "./fonts" as *;
 
 @mixin tablet {
   @media only screen and (min-width: 768px) {
