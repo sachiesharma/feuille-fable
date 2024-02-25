@@ -16,7 +16,7 @@ function SearchForm({ onSearch }) {
         type="text"
         value={query}
         onChange={(event) => setQuery(event.target.value)}
-        placeholder="Search"
+        placeholder="Search by title, author or ISBN"
       />
       {/* <h1>HELLO</h1> */}
       <button type="submit">Search</button>

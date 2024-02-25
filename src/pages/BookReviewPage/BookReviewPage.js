@@ -8,6 +8,7 @@ function BookReviewPage() {
   const { bookId } = useParams();
   const [bookDetails, setBookDetails] = useState({});
   const [coverUrl, setCoverUrl] = useState("");
+  const [authorName, setAuthorName] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -22,20 +23,38 @@ function BookReviewPage() {
 
         //choosing the first cover in the response
         const coverId = response.data.covers[0];
-
         const coverUrl = `https://covers.openlibrary.org/b/id/${coverId}-M.jpg`;
-
         setCoverUrl(coverUrl);
+
+        //Fetch author details
+        const authorKey = response.data.authors[0]?.author?.key;
+        if (authorKey) {
+          const authorResponse = await axios.get(
+            `https://openlibrary.org${authorKey}.json`
+          );
+          console.log("Author data:", authorResponse.data);
+          setAuthorName(authorResponse.data.name);
+        }
       } catch (error) {
         console.error("Error fetching book details:", error);
       } finally {
         setLoading(false);
       }
     };
-
     fetchBookDetails();
   }, [bookId]);
   console.log(bookId);
+
+  const handleReviewSubmit = async (reviewData) => {
+    try {
+      // const response = await axios.post("/saved-reviews", reviewData);
+      // console.log("Review created successfully!:", response.data);
+      console.log("Review data to submit:", reviewData);
+    } catch (error) {
+      console.error("Error submitting review:", error);
+      // console.error("Error creating review:", error.response.data.error);
+    }
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -47,15 +66,28 @@ function BookReviewPage() {
       {bookDetails && (
         <>
           <h2>{bookDetails.title}</h2>
-          <h4>{bookDetails.author_name}</h4>
+          <h4>{authorName}</h4>
           <img
             src={coverUrl}
             alt={bookDetails.title}
             onClick={() => window.open(coverUrl, "_blank")}
           />
+          {/* supposed to autopopulate with the below code but doesn't work */}
+          {/* <h2>{bookDetails.title}</h2>
+          <h4>{bookDetails.authors?.[0]?.author?.name}</h4>
+          {bookDetails.covers && (
+            <img
+              src={`https://covers.openlibrary.org/b/id/${bookDetails.covers[0]}-M.jpg`}
+              alt={bookDetails.title} */}
         </>
       )}
-      <ReviewForm />
+      <ReviewForm
+        onSubmit={handleReviewSubmit}
+        bookDetails={bookDetails}
+        authorName={authorName}
+        coverUrl={coverUrl}
+        bookId={bookId}
+      />
     </div>
   );
 }
