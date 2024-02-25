@@ -21,7 +21,7 @@ function SavedReviewsPage() {
 
   return (
     <div>
-      <h1>My Reviews</h1>
+      <h1 className="saved-reviews">My Reviews</h1>
       {reviews.map((review) => (
         <div key={review.id}>
           <h2>{review.bookTitle}</h2>

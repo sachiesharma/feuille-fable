@@ -1,0 +1,11 @@
+@use "../../styles/fonts" as *;
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.saved-reviews {
+  background: url("../../assets/images/Feuille\ Fable\ Hero\ Saved\ Review\ Page.svg");
+  background-size: cover;
+  background-position: center center;
+  height: 50vh;
+}

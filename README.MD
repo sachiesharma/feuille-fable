@@ -189,6 +189,14 @@ Create a bookshelf
 
 - A category/folder full of books sorted by read, and to-be-read.
 
+End of year wrap-up
+
+- Takes data and gives a year-in-review
+
+Survey Feature
+
+-
+
 Sorting
 
 - Sort reviews by genre, author, title, rating
