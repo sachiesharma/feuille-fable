@@ -1,0 +1,20 @@
+@use "../../styles/fonts" as *;
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.bookreview {
+  display: flex;
+
+  &__title {
+    display: flex;
+    background: url("../../assets/images/Feuille\ Fable\ Hero\ \(1\).svg");
+    background-size: cover;
+    background-position: center center;
+    height: 50vh;
+  }
+
+  &__wrapper {
+    background-color: $off-white;
+  }
+}

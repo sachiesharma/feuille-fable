@@ -61,34 +61,38 @@ function BookReviewPage() {
   }
 
   return (
-    <div>
-      <h1>Book Review Page</h1>
-      {bookDetails && (
-        <>
-          <h2>{bookDetails.title}</h2>
-          <h4>{authorName}</h4>
-          <img
-            src={coverUrl}
-            alt={bookDetails.title}
-            onClick={() => window.open(coverUrl, "_blank")}
-          />
-          {/* supposed to autopopulate with the below code but doesn't work */}
-          {/* <h2>{bookDetails.title}</h2>
+    <section className="bookreview">
+      <div>
+        <h1 className="bookreview__title"></h1>
+        <div className="bookreview__wrapper">
+          {bookDetails && (
+            <>
+              <h2>{bookDetails.title}</h2>
+              <h4>{authorName}</h4>
+              <img
+                src={coverUrl}
+                alt={bookDetails.title}
+                onClick={() => window.open(coverUrl, "_blank")}
+              />
+              {/* supposed to autopopulate with the below code but doesn't work */}
+              {/* <h2>{bookDetails.title}</h2>
           <h4>{bookDetails.authors?.[0]?.author?.name}</h4>
           {bookDetails.covers && (
             <img
               src={`https://covers.openlibrary.org/b/id/${bookDetails.covers[0]}-M.jpg`}
               alt={bookDetails.title} */}
-        </>
-      )}
-      <ReviewForm
-        onSubmit={handleReviewSubmit}
-        bookDetails={bookDetails}
-        authorName={authorName}
-        coverUrl={coverUrl}
-        bookId={bookId}
-      />
-    </div>
+            </>
+          )}
+          <ReviewForm
+            onSubmit={handleReviewSubmit}
+            bookDetails={bookDetails}
+            authorName={authorName}
+            coverUrl={coverUrl}
+            bookId={bookId}
+          />
+        </div>
+      </div>
+    </section>
   );
 }
 
