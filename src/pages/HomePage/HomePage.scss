@@ -2,12 +2,19 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/global.scss" as *;
 
-.search__wrapper {
-  background: url("../../assets/images/Feuille\ Fable\ Main\ Hero\ Centered\ \(2\).svg");
-  background-size: cover;
-  background-position: center center;
-  height: 50vh;
-  margin: 0;
-  padding: 0;
-  border: 0;
+.home-search {
+  &__wrapper {
+    background: url("../../assets/images/Feuille\ Fable\ Main\ Hero\ Centered\ \(2\).svg");
+    background-size: cover;
+    background-position: center center;
+    height: 50vh;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  &__subtitle {
+    display: flex;
+    padding: 2rem;
+  }
 }

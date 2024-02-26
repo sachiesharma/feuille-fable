@@ -63,7 +63,7 @@ function BookReviewPage() {
   return (
     <section className="bookreview">
       <div>
-        <h1 className="bookreview__title"></h1>
+        <h1 className="bookreview__title">Make an entry for this book!</h1>
         <div className="bookreview__wrapper">
           {bookDetails && (
             <>

@@ -36,9 +36,9 @@ function HomePage() {
   // }
 
   return (
-    <div>
-      <div className="search__wrapper"></div>
-      <h1 className="search__subtitle">Search for your book!</h1>
+    <div className="home-search">
+      <div className="home-search__wrapper"></div>
+      <h1 className="home-search__subtitle">Search for your book!</h1>
 
       <SearchForm onSearch={handleSearch} />
       {loading && <p>Loading search results...</p>}
