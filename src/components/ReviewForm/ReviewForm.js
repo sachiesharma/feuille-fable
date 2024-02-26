@@ -36,44 +36,46 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
   };
 
   return (
-    <form className="review-form" onSubmit={handleSubmit}>
-      {/* <input
+    <div className="review-section">
+      <form className="review-section__form" onSubmit={handleSubmit}>
+        {/* <input
         type="text"
         placeholder="BookID"
         value={bookId}
         onChange={(e) => setBookId(e.target.value)}
       /> */}
-      <input
-        type="text"
-        placeholder="Book Title"
-        value={bookDetails.title}
-        readOnly
-      />
-      <input
-        type="text"
-        placeholder="Author Name"
-        value={authorName}
-        readOnly
-      />
-      <textarea
-        placeholder="Write your review!"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Rating out of 5"
-        value={rating}
-        onChange={(e) => setRating(e.target.value)}
-      />
-      {/* <input
+        <input
+          type="text"
+          placeholder="Book Title"
+          value={bookDetails.title}
+          readOnly
+        />
+        <input
+          type="text"
+          placeholder="Author Name"
+          value={authorName}
+          readOnly
+        />
+        <textarea
+          placeholder="Write your review!"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Rating out of 5"
+          value={rating}
+          onChange={(e) => setRating(e.target.value)}
+        />
+        {/* <input
         type="text"
         placeholder="coverUrl"
         value={coverUrl}
         onChange={(e) => setCoverUrl(e.target.value)}
       /> */}
-      <button type="submit">Save Review</button>
-    </form>
+        <button type="submit">Save Review</button>
+      </form>
+    </div>
   );
 }
 

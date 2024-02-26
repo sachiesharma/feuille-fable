@@ -5,6 +5,7 @@
 
 .bookreview {
   display: flex;
+  flex-direction: column;
 
   &__title {
     display: flex;
@@ -15,6 +16,25 @@
   }
 
   &__wrapper {
+    display: flex;
+    flex-direction: column;
     background-color: $off-white;
+    padding: 1rem;
+  }
+
+  &__img-details-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__book-details {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  &__form {
+    padding: 1rem;
   }
 }

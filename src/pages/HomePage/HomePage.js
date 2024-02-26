@@ -44,11 +44,16 @@ function HomePage() {
       {loading && <p>Loading search results...</p>}
       {!loading &&
         searchResults.map((result) => (
-          <div key={result.key} onClick={() => handleClickBook(result)}>
-            <h2>{result.title}</h2>
+          <div
+            className="home-search__results-wrapper"
+            key={result.key}
+            onClick={() => handleClickBook(result)}
+          >
+            <h2 className="home-search__book-title">{result.title}</h2>
             <h4>{result.author_name}</h4>
             {result.cover_i && ( // Check if cover ID exists
               <img
+                className="home-search__coverUrl"
                 src={`https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`}
                 alt={result.title}
               />
