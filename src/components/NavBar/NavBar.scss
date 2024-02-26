@@ -5,6 +5,8 @@
 
 .navbar {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   list-style-type: none;
   font-weight: 700;
   color: white;
@@ -13,9 +15,31 @@
   margin: 0;
   position: sticky;
   top: 0;
+  padding: 0 4rem;
+
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  &__logo {
+    height: 3.75rem;
+    padding: 0;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    padding: 0 4rem;
+    @include tablet {
+      padding: 0;
+    }
+  }
 
   &__item {
-    padding: 0 1rem;
+    padding: 0 2rem;
 
     &:hover {
       color: $dark-brown;
