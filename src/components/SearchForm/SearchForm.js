@@ -12,14 +12,20 @@ function SearchForm({ onSearch }) {
 
   return (
     <form className="search" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-        placeholder="Search by title, author or ISBN"
-      />
-      {/* <h1>HELLO</h1> */}
-      <button type="submit">Search</button>
+      <div className="search__input-wrapper">
+        <input
+          className="search__input"
+          type="text"
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Search by title, author or ISBN"
+        />
+      </div>
+      <div className="search__button-wrapper">
+        <button className="search__button" type="submit">
+          Search
+        </button>
+      </div>
     </form>
   );
 }
