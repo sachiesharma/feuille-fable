@@ -7,5 +7,20 @@
   background: url("../../assets/images/Feuille\ Fable\ Hero\ Saved\ Review\ Page.svg");
   background-size: cover;
   background-position: center center;
-  height: 50vh;
+  height: 40vh;
+
+  @include tablet {
+    height: 50vh;
+  }
+
+  &__review-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  &__image {
+    height: 100px;
+    width: 70px;
+  }
 }

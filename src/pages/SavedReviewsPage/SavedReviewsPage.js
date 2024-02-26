@@ -23,11 +23,18 @@ function SavedReviewsPage() {
     <div>
       <h1 className="saved-reviews">My Reviews</h1>
       {reviews.map((review) => (
-        <div key={review.id}>
-          <h2>{review.bookTitle}</h2>
-          <h3>{review.authorName}</h3>
-          <p>{review.text}</p>
+        <div className="saved-reviews__review-wrapper" key={review.id}>
+          {review.coverUrl && (
+            <img
+              className="saved-reviews__image"
+              src={review.coverUrl}
+              alt={review.title}
+            />
+          )}
+          <h2>{review.title}</h2>
+          <h3>{review.author}</h3>
           <p>Rating: {review.rating}</p>
+          <p>{review.text}</p>
         </div>
       ))}
     </div>
