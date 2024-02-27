@@ -45,23 +45,27 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
         onChange={(e) => setBookId(e.target.value)}
       /> */}
         <input
+          className="review-section__input"
           type="text"
           placeholder="Book Title"
           value={bookDetails.title}
           readOnly
         />
         <input
+          className="review-section__input"
           type="text"
           placeholder="Author Name"
           value={authorName}
           readOnly
         />
         <textarea
+          className="review-section__input-review"
           placeholder="Write your review!"
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
         <input
+          className="review-section__input"
           type="number"
           placeholder="Rating out of 5"
           value={rating}
@@ -73,7 +77,11 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
         value={coverUrl}
         onChange={(e) => setCoverUrl(e.target.value)}
       /> */}
-        <button type="submit">Save Review</button>
+        <div>
+          <button className="review-section__button" type="submit">
+            Save Review
+          </button>
+        </div>
       </form>
     </div>
   );
