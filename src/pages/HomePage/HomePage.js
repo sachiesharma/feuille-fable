@@ -65,8 +65,10 @@ function HomePage() {
                     alt="cover not found"
                   />
                 )}
-                <h2 className="home-search__book-title">{result.title}</h2>
-                <h4>{result.author_name}</h4>
+                <h3 className="home-search__book-title">{result.title}</h3>
+                <h4 className="home-search__book-author">
+                  {result.author_name}
+                </h4>
               </div>
             </div>
           ))}

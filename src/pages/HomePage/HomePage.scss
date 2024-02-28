@@ -4,9 +4,12 @@
 @use "../../styles/global.scss" as *;
 
 .home-search {
-  // display: flex;
+  display: flex;
+  flex-direction: column;
+
   &__results-container {
     display: flex;
+    justify-content: center;
     flex-direction: column;
 
     @include tablet {
@@ -37,6 +40,7 @@
   &__results-wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 15rem;
     padding: 3rem 2rem;
     border-radius: 4px;
@@ -52,6 +56,7 @@
 
   &__results-content {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
 
@@ -64,5 +69,17 @@
     height: 16rem;
     width: 12rem;
     padding: 1rem;
+  }
+
+  &__book-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $dark-brown;
+    font-size: 16px;
+  }
+
+  &__book-author {
+    columns: $dark-brown;
   }
 }

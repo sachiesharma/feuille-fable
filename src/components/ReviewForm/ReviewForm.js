@@ -69,16 +69,10 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
           onChange={(e) => setRating(e.target.value)}
         />
         <StarRating
-        // label="Rating out of 5"
-        // rating={rating}
-        // setRating={setRating}
+          label="Rating out of 5"
+          rating={rating}
+          setRating={setRating}
         />
-        {/* <input
-        type="text"
-        placeholder="coverUrl"
-        value={coverUrl}
-        onChange={(e) => setCoverUrl(e.target.value)}
-      /> */}
         <div>
           <button className="review-section__button" type="submit">
             Save Review
