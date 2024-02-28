@@ -6,7 +6,7 @@ import StarRating from "../StarRating/StarRating.js";
 function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
   const [text, setText] = useState("");
   // const [starRating, setStarRating] = useState(0);
-  const [rating, setRating] = useState(0);
+  const [starRating, setStarRating] = useState(0);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -17,7 +17,7 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
         title: bookDetails.title,
         author: authorName,
         text: text,
-        rating: rating,
+        rating: starRating,
         coverUrl: coverUrl,
       });
 
@@ -27,7 +27,7 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
       // setAuthorName("");
       // setBookTitle("");
       setText("");
-      setRating(0);
+      setStarRating(0);
     } catch (error) {
       console.error("Error creating review:", error.response.data);
     }
@@ -72,8 +72,8 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
         <StarRating
           className="review-section__star-rating"
           label="Rating out of 5 "
-          rating={rating}
-          setRating={setRating}
+          rating={starRating}
+          setRating={setStarRating}
         />
         <div>
           <button className="review-section__button" type="submit">
