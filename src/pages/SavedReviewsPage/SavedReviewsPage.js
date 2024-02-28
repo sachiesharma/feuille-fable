@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import StarRating from "../../components/StarRating/StarRating";
 import "../SavedReviewsPage/SavedReviewsPage.scss";
 
 function SavedReviewsPage() {
@@ -35,8 +36,9 @@ function SavedReviewsPage() {
           )}
           <h2>{review.title}</h2>
           <h3>{review.author}</h3>
-          <p>Rating: {review.rating}</p>
+          {/* <p>Rating: {review.rating}</p> */}
           <p>{review.text}</p>
+          <StarRating rating={review.rating} readOnly />
         </div>
       ))}
     </div>
