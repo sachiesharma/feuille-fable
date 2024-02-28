@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../ReviewForm/ReviewForm.scss";
-// import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-// import FavoriteIcon from "@mui/icons-material/Favorite";
+import StarRating from "../StarRating/StarRating.js";
 
 function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
-  // const [bookId, setBookId] = useState("");
-  // const [bookTitle, setBookTitle] = useState("");
-  // const [authorName, setAuthorName] = useState("");
   const [text, setText] = useState("");
   const [rating, setRating] = useState("");
-  // const [coverUrl, setCoverUrl] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -72,6 +67,11 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
           placeholder="Rating out of 5"
           value={rating}
           onChange={(e) => setRating(e.target.value)}
+        />
+        <StarRating
+        // label="Rating out of 5"
+        // rating={rating}
+        // setRating={setRating}
         />
         {/* <input
         type="text"
