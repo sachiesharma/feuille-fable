@@ -30,6 +30,13 @@
     padding: 2rem;
   }
 
+  &__button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
   &__button {
     all: unset;
     display: flex;
@@ -38,8 +45,8 @@
     font-weight: 600;
     color: white;
     background-color: $dark-pink;
-    width: 50vw;
-    height: 5vh;
+    width: 60vw;
+    height: 6vh;
     border-radius: 5px;
   }
 }

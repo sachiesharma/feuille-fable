@@ -18,7 +18,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 function StarRating({ label, rating, setRating }) {
   return (
     //new stuff is div, label, Rating
-    <div>
+    <div className="star-rating">
       <label>{label}</label>
       <Rating
         name="customized-color"

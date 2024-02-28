@@ -75,7 +75,7 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
           rating={starRating}
           setRating={setStarRating}
         />
-        <div>
+        <div className="review-section__button-wrapper">
           <button className="review-section__button" type="submit">
             Save Review
           </button>
