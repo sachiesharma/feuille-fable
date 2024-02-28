@@ -25,6 +25,11 @@
     height: 6rem;
   }
 
+  &__star-rating {
+    display: flex;
+    padding: 2rem;
+  }
+
   &__button {
     all: unset;
     display: flex;
