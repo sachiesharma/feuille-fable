@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import axios from "axios";
 import "../HomePage/HomePage.scss";
+import defaultImage from "../../assets/images/cover_not_found.jpg";
 
 function HomePage() {
   const [searchResults, setSearchResults] = useState([]);
@@ -42,24 +43,34 @@ function HomePage() {
 
       <SearchForm onSearch={handleSearch} />
       {loading && <p>Loading search results...</p>}
-      {!loading &&
-        searchResults.map((result) => (
-          <div
-            className="home-search__results-wrapper"
-            key={result.key}
-            onClick={() => handleClickBook(result)}
-          >
-            <h2 className="home-search__book-title">{result.title}</h2>
-            <h4>{result.author_name}</h4>
-            {result.cover_i && ( // Check if cover ID exists
-              <img
-                className="home-search__coverUrl"
-                src={`https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`}
-                alt={result.title}
-              />
-            )}
-          </div>
-        ))}
+      <div className="home-search__results-container">
+        {!loading &&
+          searchResults.map((result) => (
+            <div
+              className="home-search__results-wrapper"
+              key={result.key}
+              onClick={() => handleClickBook(result)}
+            >
+              <div className="home-search__results-content">
+                {result.cover_i ? ( // Check if cover ID exists
+                  <img
+                    className="home-search__coverUrl"
+                    src={`https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`}
+                    alt={result.title}
+                  />
+                ) : (
+                  <img
+                    className="home-search__coverUrl"
+                    src={defaultImage}
+                    alt="cover not found"
+                  />
+                )}
+                <h2 className="home-search__book-title">{result.title}</h2>
+                <h4>{result.author_name}</h4>
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }

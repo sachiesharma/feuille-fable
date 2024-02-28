@@ -20,8 +20,10 @@ function SavedReviewsPage() {
   }, []);
 
   return (
-    <div>
-      <h1 className="saved-reviews">My Reviews</h1>
+    <div className="saved-reviews">
+      <div className="saved-reviews__title">
+        <h1>My Reviews</h1>
+      </div>
       {reviews.map((review) => (
         <div className="saved-reviews__review-wrapper" key={review.id}>
           {review.coverUrl && (

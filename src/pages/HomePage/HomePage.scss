@@ -4,6 +4,17 @@
 @use "../../styles/global.scss" as *;
 
 .home-search {
+  // display: flex;
+  &__results-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
   &__wrapper {
     background: url("../../assets/images/fable-hero-final.svg");
     background-size: cover;
@@ -25,5 +36,33 @@
 
   &__results-wrapper {
     display: flex;
+    flex-direction: column;
+    width: 15rem;
+    padding: 3rem 2rem;
+    border-radius: 4px;
+    background-color: var(--white-color);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 15px 0px;
+    transition: var(--transition);
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__results-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+      // flex-direction: row;
+    }
+  }
+
+  &__coverUrl {
+    height: 16rem;
+    width: 12rem;
+    padding: 1rem;
   }
 }
