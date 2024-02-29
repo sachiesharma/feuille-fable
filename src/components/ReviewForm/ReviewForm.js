@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../ReviewForm/ReviewForm.scss";
 import StarRating from "../StarRating/StarRating.js";
+import { useNavigate } from "react-router-dom";
 
 function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
   const [text, setText] = useState("");
   // const [starRating, setStarRating] = useState(0);
   const [starRating, setStarRating] = useState(0);
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,6 +25,12 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
 
       console.log("Review created successfully:", response.data);
 
+      //Display alert
+      window.alert("Review saved successfully!");
+
+      //Redirect to saved entries after alert is closed
+      handleRedirect("/saved-reviews");
+
       //reset form fields
       // setAuthorName("");
       // setBookTitle("");
@@ -32,6 +40,15 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
       console.error("Error creating review:", error.response.data);
     }
   };
+
+  const handleRedirect = (destination) => {
+    navigate(destination);
+  };
+
+  // const handleSaveReview = () => {
+  //   handleSubmit();
+  //   handleRedirect("/saved-reviews");
+  // };
 
   return (
     <div className="review-section">
@@ -77,8 +94,18 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
         />
         <div className="review-section__button-wrapper">
           <button className="review-section__button" type="submit">
-            Save Review
+            Save to Entries
           </button>
+          {/* <button
+            className="review-section__button"
+            type="button"
+            onClick={handleSaveReview}
+          >
+            Save to Entries
+          </button>
+          <button type="button" onClick={() => handleRedirect("/")}>
+            Make Another Review
+          </button> */}
         </div>
       </form>
     </div>
