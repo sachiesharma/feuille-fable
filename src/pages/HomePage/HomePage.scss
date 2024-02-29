@@ -37,6 +37,10 @@
     height: 6rem;
   }
 
+  &__loader {
+    height: 20vh;
+  }
+
   &__results-wrapper {
     display: flex;
     flex-direction: column;

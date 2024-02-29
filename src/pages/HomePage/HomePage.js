@@ -4,6 +4,7 @@ import SearchForm from "../../components/SearchForm/SearchForm";
 import axios from "axios";
 import "../HomePage/HomePage.scss";
 import defaultImage from "../../assets/images/cover_not_found.jpg";
+import loaderLogo from "../../assets/images/loader.svg";
 
 function HomePage() {
   const [searchResults, setSearchResults] = useState([]);
@@ -42,7 +43,13 @@ function HomePage() {
       <h1 className="home-search__subtitle">Search for your book!</h1>
 
       <SearchForm onSearch={handleSearch} />
-      {loading && <p>Loading search results...</p>}
+      {loading && (
+        <img
+          className="home-search__loader"
+          src={loaderLogo}
+          alt="Loading..."
+        />
+      )}
       <div className="home-search__results-container">
         {!loading &&
           searchResults.map((result) => (
