@@ -9,24 +9,34 @@
   align-items: center;
   list-style-type: none;
   font-weight: 700;
+  font-size: 18px;
   color: white;
   background-color: $light-pink;
-  padding: 1rem;
   margin: 0;
   position: sticky;
   top: 0;
-  padding: 0 4rem;
+  padding: 0.5rem 4rem;
+  height: 6rem;
 
   @include tablet {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0 1rem;
+    font-size: 22px;
+    @include desktop {
+      padding: 3rem;
+    }
   }
 
   &__logo {
     height: 3.75rem;
     padding: 0;
+
+    @include tablet {
+      height: 5rem;
+      padding: 0 2rem;
+    }
   }
 
   &__menu {

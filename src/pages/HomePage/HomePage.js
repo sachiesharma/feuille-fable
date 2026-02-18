@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import axios from "axios";
 import "../HomePage/HomePage.scss";
+import defaultImage from "../../assets/images/cover_not_found.jpg";
+import loaderLogo from "../../assets/images/loader.svg";
 
 function HomePage() {
   const [searchResults, setSearchResults] = useState([]);
@@ -36,25 +38,48 @@ function HomePage() {
   // }
 
   return (
-    <div>
-      <div className="search__wrapper"></div>
-      <h1 className="search__subtitle">Search for your book!</h1>
+    <div className="home-search">
+      <div className="home-search__wrapper"></div>
+      <h1 className="home-search__subtitle">Search for your book!</h1>
 
       <SearchForm onSearch={handleSearch} />
-      {loading && <p>Loading search results...</p>}
-      {!loading &&
-        searchResults.map((result) => (
-          <div key={result.key} onClick={() => handleClickBook(result)}>
-            <h2>{result.title}</h2>
-            <h4>{result.author_name}</h4>
-            {result.cover_i && ( // Check if cover ID exists
-              <img
-                src={`https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`}
-                alt={result.title}
-              />
-            )}
-          </div>
-        ))}
+      {loading && (
+        <img
+          className="home-search__loader"
+          src={loaderLogo}
+          alt="Loading..."
+        />
+      )}
+      <div className="home-search__results-container">
+        {!loading &&
+          searchResults.map((result) => (
+            <div
+              className="home-search__results-wrapper"
+              key={result.key}
+              onClick={() => handleClickBook(result)}
+            >
+              <div className="home-search__results-content">
+                {result.cover_i ? ( // Check if cover ID exists
+                  <img
+                    className="home-search__coverUrl"
+                    src={`https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`}
+                    alt={result.title}
+                  />
+                ) : (
+                  <img
+                    className="home-search__coverUrl"
+                    src={defaultImage}
+                    alt="cover not found"
+                  />
+                )}
+                <h3 className="home-search__book-title">{result.title}</h3>
+                <h4 className="home-search__book-author">
+                  {result.author_name}
+                </h4>
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }

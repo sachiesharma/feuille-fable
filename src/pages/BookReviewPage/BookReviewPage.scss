@@ -5,16 +5,51 @@
 
 .bookreview {
   display: flex;
+  flex-direction: column;
 
-  &__title {
-    display: flex;
-    background: url("../../assets/images/Feuille\ Fable\ Hero\ Bookstack.svg");
+  &__title-wrapper {
+    background: url("../../assets/images/feuille-fable-hero-book-entry.svg");
     background-size: cover;
     background-position: center center;
     height: 50vh;
   }
 
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: $dusty-blue;
+    height: 6rem;
+  }
+
   &__wrapper {
+    display: flex;
+    flex-direction: column;
     background-color: $off-white;
+    padding: 1rem;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 2rem;
+    }
+  }
+
+  &__img-details-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__book-details {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  &__form {
+    padding: 1rem;
   }
 }
