@@ -24,7 +24,9 @@ function SavedReviewsPage() {
     <div className="saved-reviews">
       <div className="saved-reviews__title"></div>
       <div className="saved-reviews__section-wrapper">
-        <h1 className="saved-reviews__section-title">My Reviews</h1>
+        <div className="saved-reviews__section-title-wrapper">
+          <h1 className="saved-reviews__section-title">My Reviews</h1>
+        </div>
         {reviews.map((review) => (
           <div className="saved-reviews__review-wrapper" key={review.id}>
             {review.coverUrl && (
