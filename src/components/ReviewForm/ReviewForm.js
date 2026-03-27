@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
   const [text, setText] = useState("");
-  // const [starRating, setStarRating] = useState(0);
   const [starRating, setStarRating] = useState(0);
   const navigate = useNavigate();
 
@@ -14,14 +13,17 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8080/saved-reviews", {
-        bookId: bookId,
-        title: bookDetails.title,
-        author: authorName,
-        text: text,
-        rating: starRating,
-        coverUrl: coverUrl,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}/saved-reviews`,
+        {
+          bookId: bookId,
+          title: bookDetails.title,
+          author: authorName,
+          text: text,
+          rating: starRating,
+          coverUrl: coverUrl,
+        },
+      );
 
       console.log("Review created successfully:", response.data);
 
@@ -37,18 +39,13 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
       setText("");
       setStarRating(0);
     } catch (error) {
-      console.error("Error creating review:", error.response.data);
+      console.error("Error creating review:", error);
     }
   };
 
   const handleRedirect = (destination) => {
     navigate(destination);
   };
-
-  // const handleSaveReview = () => {
-  //   handleSubmit();
-  //   handleRedirect("/saved-reviews");
-  // };
 
   return (
     <div className="review-section">

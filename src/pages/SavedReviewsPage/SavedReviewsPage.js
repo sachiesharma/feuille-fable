@@ -10,7 +10,9 @@ function SavedReviewsPage() {
     const fetchReviews = async () => {
       try {
         // is /saved-reviews the correct end point?
-        const response = await axios.get("http://localhost:8080/saved-reviews");
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/saved-reviews`,
+        );
         setReviews(response.data);
       } catch (error) {
         console.error("Error fetching reviews;", error);
