@@ -14,13 +14,14 @@
   <rect x="698" y="282" width="46" height="120" rx="5" fill="#d18e8b" stroke="#6f584a" stroke-width="5"/>
   <line x1="710" y1="304" x2="732" y2="304" stroke="#fffdfa" stroke-width="4" stroke-linecap="round"/>
   <g transform="rotate(14 796 402)">
-    <rect x="774" y="288" width="42" height="114" rx="5" fill="#fffdfa" stroke="#6f584a" stroke-width="5"/>
-    <line x1="784" y1="310" x2="806" y2="310" stroke="#dabcba" stroke-width="4" stroke-linecap="round"/>
+    <rect x="774" y="288" width="42" height="114" rx="5" fill="#b3c9d4" stroke="#6f584a" stroke-width="5"/>
+    <line x1="784" y1="310" x2="806" y2="310" stroke="#fffdfa" stroke-width="4" stroke-linecap="round"/>
   </g>
-  <rect x="836" y="300" width="40" height="102" rx="5" fill="#c7a894" stroke="#6f584a" stroke-width="5"/>
+  <rect x="836" y="300" width="40" height="102" rx="5" fill="#c9a9e0" stroke="#6f584a" stroke-width="5"/>
+  <line x1="846" y1="322" x2="866" y2="322" stroke="#fffdfa" stroke-width="4" stroke-linecap="round"/>
   <path d="M878 236 c -7 -12 -26 -8 -26 7 c 0 12 15 19 26 27 c 11 -8 26 -15 26 -27 c 0 -15 -19 -19 -26 -7 Z" fill="#d18e8b"/>
-  <path d="M470 250 l 7 11 l -7 11 l -7 -11 Z" fill="#c7a894"/>
-  <path d="M986 320 l 6 9 l -6 9 l -6 -9 Z" fill="#dabcba"/>
-  <circle cx="498" cy="332" r="6" fill="#dabcba"/>
+  <path d="M470 250 l 7 11 l -7 11 l -7 -11 Z" fill="#c9a9e0"/>
+  <path d="M986 320 l 6 9 l -6 9 l -6 -9 Z" fill="#9fb9c6"/>
+  <circle cx="498" cy="332" r="6" fill="#9fb9c6"/>
   <circle cx="952" cy="140" r="4" fill="#c7a894"/>
 </svg>

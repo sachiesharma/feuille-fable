@@ -30,10 +30,10 @@ function StarRating({ label, rating, setRating }) {
         icon={<FavoriteIcon />}
         sx={{
           "& .MuiRating-iconFilled": {
-            color: "#d18e8b",
+            color: "#bc89de",
           },
           "& .MuiRating-iconEmpty": {
-            color: "#dabcba",
+            color: "#ddc9ee",
           },
         }}
       />

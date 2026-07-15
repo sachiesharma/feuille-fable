@@ -33,7 +33,7 @@
       height: 3px;
       margin-top: 1rem;
       border-radius: 3px;
-      background-color: $accent;
+      background-color: $lavender;
     }
   }
 
@@ -63,6 +63,7 @@
 
     &:hover {
       box-shadow: $shadow-md;
+      border-color: $blue-soft;
     }
 
     @include tablet {
