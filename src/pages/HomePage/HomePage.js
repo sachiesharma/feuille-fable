@@ -74,7 +74,9 @@ function HomePage() {
                 )}
                 <h3 className="home-search__book-title">{result.title}</h3>
                 <h4 className="home-search__book-author">
-                  {result.author_name}
+                  {Array.isArray(result.author_name)
+                    ? result.author_name.join(", ")
+                    : result.author_name}
                 </h4>
               </div>
             </div>

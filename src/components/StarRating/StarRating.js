@@ -30,10 +30,10 @@ function StarRating({ label, rating, setRating }) {
         icon={<FavoriteIcon />}
         sx={{
           "& .MuiRating-iconFilled": {
-            color: "#bc89de", // Custom filled heart color
+            color: "#d18e8b",
           },
           "& .MuiRating-iconEmpty": {
-            color: "#9447c7", // Custom empty heart color
+            color: "#dabcba",
           },
         }}
       />

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 560">
+  <rect width="1440" height="560" fill="#f8f7f4"/>
+  <circle cx="700" cy="300" r="205" fill="#ffe1d9" opacity="0.45"/>
+  <circle cx="935" cy="180" r="55" fill="#f3e3da" opacity="0.55"/>
+  <circle cx="500" cy="170" r="34" fill="#f3e3da" opacity="0.5"/>
+  <ellipse cx="700" cy="430" rx="180" ry="13" fill="#ece1d8"/>
+  <path d="M540 310 C 598 288 656 286 698 304 L 698 400 C 656 384 598 386 540 404 Z" fill="#fffdfa" stroke="#6f584a" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M856 310 C 798 288 740 286 702 304 L 702 400 C 740 384 798 386 856 404 Z" fill="#fffdfa" stroke="#6f584a" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M574 324 C 610 312 642 310 678 318" stroke="#dabcba" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M574 346 C 598 337 616 334 632 335" stroke="#d18e8b" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M574 368 C 610 356 642 354 678 362" stroke="#ecdcd5" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M822 324 C 786 312 754 310 722 318" stroke="#ecdcd5" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M822 346 C 786 334 754 332 722 340" stroke="#ecdcd5" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <g transform="rotate(38 856 296)">
+    <rect x="790" y="286" width="128" height="20" rx="10" fill="#fffdfa" stroke="#6f584a" stroke-width="5"/>
+    <path d="M790 296 L 758 296 L 782 288 L 782 304 L 758 296" fill="#d18e8b" stroke="#6f584a" stroke-width="4" stroke-linejoin="round"/>
+    <line x1="842" y1="288" x2="842" y2="304" stroke="#dabcba" stroke-width="4"/>
+  </g>
+  <path d="M905 216 c -7 -12 -26 -8 -26 7 c 0 12 15 19 26 27 c 11 -8 26 -15 26 -27 c 0 -15 -19 -19 -26 -7 Z" fill="#d18e8b"/>
+  <path d="M452 260 l 7 11 l -7 11 l -7 -11 Z" fill="#c7a894"/>
+  <path d="M990 330 l 6 9 l -6 9 l -6 -9 Z" fill="#dabcba"/>
+  <circle cx="510" cy="330" r="6" fill="#dabcba"/>
+  <circle cx="946" cy="146" r="4" fill="#c7a894"/>
+</svg>

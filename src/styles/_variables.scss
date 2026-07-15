@@ -10,3 +10,24 @@ $dark-pink: #d18e8b;
 $dusty-blue: #9fb9c6;
 $purple: #bc89de;
 $dark-purple: #9447c7;
+
+//semantic tokens
+$ink: #4a3a2e; // primary text
+$ink-soft: #8a7362; // secondary text
+$surface: #fffdfa; // cards
+$border-soft: #eae2d8;
+$accent: $dark-pink;
+$accent-dark: #b97370;
+
+//typography
+$font-body: "Raleway", Arial, Helvetica, sans-serif;
+$font-display: "Playfair Display", "Iowan Old Style", Palatino, Georgia, serif;
+
+//shape & elevation
+$radius-sm: 8px;
+$radius-md: 14px;
+$radius-lg: 20px;
+$shadow-sm: 0 1px 3px rgba(74, 58, 46, 0.08);
+$shadow-md: 0 6px 18px rgba(74, 58, 46, 0.1);
+$shadow-lg: 0 14px 34px rgba(74, 58, 46, 0.16);
+$transition: all 0.25s ease;

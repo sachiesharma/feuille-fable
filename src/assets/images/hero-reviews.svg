@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 560">
+  <rect width="1440" height="560" fill="#f8f7f4"/>
+  <circle cx="720" cy="290" r="200" fill="#ffe1d9" opacity="0.45"/>
+  <circle cx="930" cy="170" r="55" fill="#f3e3da" opacity="0.55"/>
+  <circle cx="512" cy="160" r="34" fill="#f3e3da" opacity="0.5"/>
+  <line x1="520" y1="408" x2="920" y2="408" stroke="#6f584a" stroke-width="6" stroke-linecap="round"/>
+  <rect x="552" y="296" width="40" height="106" rx="5" fill="#fffdfa" stroke="#6f584a" stroke-width="5"/>
+  <line x1="572" y1="316" x2="572" y2="330" stroke="#dabcba" stroke-width="4" stroke-linecap="round"/>
+  <rect x="600" y="272" width="44" height="130" rx="5" fill="#dabcba" stroke="#6f584a" stroke-width="5"/>
+  <line x1="612" y1="292" x2="632" y2="292" stroke="#fffdfa" stroke-width="4" stroke-linecap="round"/>
+  <line x1="612" y1="382" x2="632" y2="382" stroke="#fffdfa" stroke-width="4" stroke-linecap="round"/>
+  <rect x="652" y="306" width="38" height="96" rx="5" fill="#fffdfa" stroke="#6f584a" stroke-width="5"/>
+  <circle cx="671" cy="354" r="7" fill="#d18e8b"/>
+  <rect x="698" y="282" width="46" height="120" rx="5" fill="#d18e8b" stroke="#6f584a" stroke-width="5"/>
+  <line x1="710" y1="304" x2="732" y2="304" stroke="#fffdfa" stroke-width="4" stroke-linecap="round"/>
+  <g transform="rotate(14 796 402)">
+    <rect x="774" y="288" width="42" height="114" rx="5" fill="#fffdfa" stroke="#6f584a" stroke-width="5"/>
+    <line x1="784" y1="310" x2="806" y2="310" stroke="#dabcba" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <rect x="836" y="300" width="40" height="102" rx="5" fill="#c7a894" stroke="#6f584a" stroke-width="5"/>
+  <path d="M878 236 c -7 -12 -26 -8 -26 7 c 0 12 15 19 26 27 c 11 -8 26 -15 26 -27 c 0 -15 -19 -19 -26 -7 Z" fill="#d18e8b"/>
+  <path d="M470 250 l 7 11 l -7 11 l -7 -11 Z" fill="#c7a894"/>
+  <path d="M986 320 l 6 9 l -6 9 l -6 -9 Z" fill="#dabcba"/>
+  <circle cx="498" cy="332" r="6" fill="#dabcba"/>
+  <circle cx="952" cy="140" r="4" fill="#c7a894"/>
+</svg>

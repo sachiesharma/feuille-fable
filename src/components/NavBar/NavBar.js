@@ -1,14 +1,17 @@
 import React from "react";
 import "../NavBar/NavBar.scss";
 import { Link } from "react-router-dom";
-import ffLogo from "../../assets/images/feuille-fable-logo-good.png";
+import ffLogo from "../../assets/images/logo-mark.svg";
 
 function NavBar() {
   return (
     <div>
       <ul className="navbar">
         <li>
-          <img className="navbar__logo" src={ffLogo} alt="Feuille-Fable Logo" />
+          <Link to="/" className="navbar__logo-link" aria-label="Feuille Fable home">
+            <img className="navbar__logo" src={ffLogo} alt="" />
+            <span className="navbar__wordmark">Feuille Fable</span>
+          </Link>
         </li>
         <div className="navbar__menu">
           <li className="navbar__item">
