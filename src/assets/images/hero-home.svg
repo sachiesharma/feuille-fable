@@ -3,9 +3,17 @@
   <circle cx="720" cy="290" r="215" fill="#ffe1d9" opacity="0.45"/>
   <circle cx="915" cy="165" r="62" fill="#f3e3da" opacity="0.55"/>
   <circle cx="528" cy="148" r="36" fill="#f3e3da" opacity="0.5"/>
-  <ellipse cx="720" cy="438" rx="185" ry="13" fill="#ece1d8"/>
+  <ellipse cx="720" cy="448" rx="195" ry="13" fill="#ece1d8"/>
   <path d="M556 322 C 615 298 675 296 718 316 L 718 410 C 675 392 615 394 556 414 Z" fill="#fffdfa" stroke="#6f584a" stroke-width="5" stroke-linejoin="round"/>
   <path d="M884 322 C 825 298 765 296 722 316 L 722 410 C 765 392 825 394 884 414 Z" fill="#fffdfa" stroke="#6f584a" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M556 423 C 615 403 675 401 720 420" stroke="#6f584a" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M884 423 C 825 403 765 401 720 420" stroke="#6f584a" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M560 432 C 616 413 673 411 720 429" stroke="#6f584a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M880 432 C 824 413 767 411 720 429" stroke="#6f584a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M556 414 L 556 423" stroke="#6f584a" stroke-width="5" stroke-linecap="round"/>
+  <path d="M884 414 L 884 423" stroke="#6f584a" stroke-width="5" stroke-linecap="round"/>
+  <path d="M556 423 L 560 432" stroke="#6f584a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M884 423 L 880 432" stroke="#6f584a" stroke-width="4" stroke-linecap="round"/>
   <path d="M592 334 C 630 320 664 318 698 328" stroke="#dabcba" stroke-width="4" fill="none" stroke-linecap="round"/>
   <path d="M592 356 C 630 342 664 340 698 350" stroke="#ecdcd5" stroke-width="4" fill="none" stroke-linecap="round"/>
   <path d="M592 378 C 630 364 664 362 698 372" stroke="#ecdcd5" stroke-width="4" fill="none" stroke-linecap="round"/>
