@@ -48,6 +48,73 @@
     padding: 0 1.5rem;
   }
 
+  &__status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 2rem 1.5rem 1rem;
+    text-align: center;
+  }
+
+  &__loader {
+    height: 5rem;
+  }
+
+  &__status-text {
+    color: $ink-soft;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    max-width: 26rem;
+  }
+
+  &__retry-button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-body;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: white;
+    background-color: $accent;
+    padding: 0.875rem 2.5rem;
+    border-radius: 999px;
+    box-shadow: $shadow-sm;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      background-color: $accent-dark;
+      transform: translateY(-1px);
+      box-shadow: $shadow-md;
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(209, 142, 139, 0.35);
+    }
+  }
+
+  &__empty-link {
+    font-weight: 700;
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $accent;
+    text-decoration: none;
+    border-bottom: 2px solid $light-pink;
+    padding-bottom: 0.25rem;
+    transition: $transition;
+
+    &:hover {
+      color: $accent-dark;
+      border-color: $accent;
+    }
+  }
+
   &__review-wrapper {
     display: flex;
     flex-direction: row;
