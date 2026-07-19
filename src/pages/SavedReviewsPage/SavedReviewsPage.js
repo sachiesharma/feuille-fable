@@ -4,6 +4,7 @@ import axios from "axios";
 import StarRating from "../../components/StarRating/StarRating";
 import "../SavedReviewsPage/SavedReviewsPage.scss";
 import loaderLogo from "../../assets/images/loader.svg";
+import defaultImage from "../../assets/images/cover_not_found.jpg";
 
 function SavedReviewsPage() {
   const [reviews, setReviews] = useState([]);
@@ -88,6 +89,10 @@ function SavedReviewsPage() {
                   className="saved-reviews__image"
                   src={review.coverUrl}
                   alt={review.title}
+                  onError={(event) => {
+                    event.target.onerror = null;
+                    event.target.src = defaultImage;
+                  }}
                 />
               )}
               <div className="saved-reviews__title-author-wrapper">

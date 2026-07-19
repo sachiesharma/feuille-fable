@@ -64,6 +64,10 @@ function HomePage() {
                     className="home-search__coverUrl"
                     src={`https://covers.openlibrary.org/b/id/${result.cover_i}-M.jpg`}
                     alt={result.title}
+                    onError={(event) => {
+                      event.target.onerror = null;
+                      event.target.src = defaultImage;
+                    }}
                   />
                 ) : (
                   <img

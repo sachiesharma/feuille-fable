@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../BookReviewPage/BookReviewPage.scss";
 import ReviewForm from "../../components/ReviewForm/ReviewForm";
+import defaultImage from "../../assets/images/cover_not_found.jpg";
 
 function BookReviewPage() {
   const { bookId } = useParams();
@@ -74,6 +75,10 @@ function BookReviewPage() {
                 src={coverUrl}
                 alt={bookDetails.title}
                 onClick={() => window.open(coverUrl, "_blank")}
+                onError={(event) => {
+                  event.target.onerror = null;
+                  event.target.src = defaultImage;
+                }}
               />
               <div className="bookreview__book-details">
                 <h2>{bookDetails.title}</h2>
