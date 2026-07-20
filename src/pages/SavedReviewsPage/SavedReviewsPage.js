@@ -285,9 +285,9 @@ function SavedReviewsPage() {
                   </div>
                 ) : (
                   <>
-                    {renderDates(review)}
                     <p>{review.text}</p>
                     <StarRating rating={review.rating} readOnly />
+                    {renderDates(review)}
                   </>
                 )}
               </div>
