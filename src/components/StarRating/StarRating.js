@@ -15,7 +15,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 //   },
 // });
 
-function StarRating({ label, rating, setRating }) {
+function StarRating({ label, rating, setRating, readOnly }) {
   return (
     //new stuff is div, label, Rating
     <div className="star-rating">
@@ -23,8 +23,11 @@ function StarRating({ label, rating, setRating }) {
       <Rating
         name="customized-color"
         value={rating}
+        readOnly={readOnly}
         onChange={(event, newValue) => {
-          setRating(newValue);
+          if (setRating) {
+            setRating(newValue);
+          }
         }}
         emptyIcon={<FavoriteBorderIcon />}
         icon={<FavoriteIcon />}

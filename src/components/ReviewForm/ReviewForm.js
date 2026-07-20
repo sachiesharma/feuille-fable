@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
   const [text, setText] = useState("");
   const [starRating, setStarRating] = useState(0);
+  const [dateStarted, setDateStarted] = useState("");
+  const [dateFinished, setDateFinished] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -22,6 +24,8 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
           text: text,
           rating: starRating,
           coverUrl: coverUrl,
+          date_started: dateStarted || null,
+          date_finished: dateFinished || null,
         },
       );
 
@@ -38,6 +42,8 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
       // setBookTitle("");
       setText("");
       setStarRating(0);
+      setDateStarted("");
+      setDateFinished("");
     } catch (error) {
       console.error("Error creating review:", error);
     }
@@ -76,6 +82,27 @@ function ReviewForm({ onSubmit, bookDetails, authorName, coverUrl, bookId }) {
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
+        <div className="review-section__date-row">
+          <label className="review-section__date-field">
+            <span className="review-section__date-label">Started reading</span>
+            <input
+              className="review-section__input"
+              type="date"
+              value={dateStarted}
+              onChange={(e) => setDateStarted(e.target.value)}
+            />
+          </label>
+          <label className="review-section__date-field">
+            <span className="review-section__date-label">Finished reading</span>
+            <input
+              className="review-section__input"
+              type="date"
+              value={dateFinished}
+              min={dateStarted || undefined}
+              onChange={(e) => setDateFinished(e.target.value)}
+            />
+          </label>
+        </div>
         {/* <input
           className="review-section__input"
           type="number"

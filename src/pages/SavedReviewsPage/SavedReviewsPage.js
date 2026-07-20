@@ -6,10 +6,30 @@ import "../SavedReviewsPage/SavedReviewsPage.scss";
 import loaderLogo from "../../assets/images/loader.svg";
 import defaultImage from "../../assets/images/cover_not_found.jpg";
 
+// Dates arrive as ISO strings; build the Date from parts so the displayed
+// day never shifts across timezones.
+const formatDate = (value) => {
+  if (!value) return null;
+  const [year, month, day] = value.slice(0, 10).split("-");
+  return new Date(year, month - 1, day).toLocaleDateString(undefined, {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+};
+
 function SavedReviewsPage() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [editingId, setEditingId] = useState(null);
+  const [saving, setSaving] = useState(false);
+  const [editForm, setEditForm] = useState({
+    text: "",
+    rating: 0,
+    date_started: "",
+    date_finished: "",
+  });
 
   const fetchReviews = async () => {
     setLoading(true);
@@ -35,6 +55,74 @@ function SavedReviewsPage() {
   useEffect(() => {
     fetchReviews();
   }, []);
+
+  const startEditing = (review) => {
+    setEditingId(review.id);
+    setEditForm({
+      text: review.text,
+      rating: review.rating,
+      date_started: review.date_started ? review.date_started.slice(0, 10) : "",
+      date_finished: review.date_finished
+        ? review.date_finished.slice(0, 10)
+        : "",
+    });
+  };
+
+  const cancelEditing = () => {
+    setEditingId(null);
+  };
+
+  const handleSave = async (id) => {
+    setSaving(true);
+    try {
+      const response = await axios.put(
+        `${process.env.REACT_APP_API_URL}/saved-reviews/${id}`,
+        {
+          text: editForm.text,
+          rating: editForm.rating,
+          date_started: editForm.date_started || null,
+          date_finished: editForm.date_finished || null,
+        },
+      );
+      setReviews(
+        reviews.map((review) => (review.id === id ? response.data : review)),
+      );
+      setEditingId(null);
+    } catch (error) {
+      console.error("Error updating review:", error);
+      window.alert("Couldn't save your changes. Please try again.");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleDelete = async (review) => {
+    if (!window.confirm(`Delete your entry for "${review.title}"?`)) {
+      return;
+    }
+    try {
+      await axios.delete(
+        `${process.env.REACT_APP_API_URL}/saved-reviews/${review.id}`,
+      );
+      setReviews(reviews.filter((item) => item.id !== review.id));
+    } catch (error) {
+      console.error("Error deleting review:", error);
+      window.alert("Couldn't delete the entry. Please try again.");
+    }
+  };
+
+  const renderDates = (review) => {
+    const started = formatDate(review.date_started);
+    const finished = formatDate(review.date_finished);
+    if (!started && !finished) return null;
+    return (
+      <p className="saved-reviews__dates">
+        {started && `Started ${started}`}
+        {started && finished && " · "}
+        {finished && `Finished ${finished}`}
+      </p>
+    );
+  };
 
   return (
     <div className="saved-reviews">
@@ -84,6 +172,26 @@ function SavedReviewsPage() {
           !error &&
           reviews.map((review) => (
             <div className="saved-reviews__review-wrapper" key={review.id}>
+              <div className="saved-reviews__actions">
+                {editingId !== review.id && (
+                  <>
+                    <button
+                      className="saved-reviews__action-button"
+                      type="button"
+                      onClick={() => startEditing(review)}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="saved-reviews__action-button saved-reviews__action-button--danger"
+                      type="button"
+                      onClick={() => handleDelete(review)}
+                    >
+                      Delete
+                    </button>
+                  </>
+                )}
+              </div>
               {review.coverUrl && (
                 <img
                   className="saved-reviews__image"
@@ -100,8 +208,82 @@ function SavedReviewsPage() {
                 <h3 className="saved-reviews__book-author">{review.author}</h3>
               </div>
               <div className="saved-reviews__text-rating-wrapper">
-                <p>{review.text}</p>
-                <StarRating rating={review.rating} readOnly />
+                {editingId === review.id ? (
+                  <div className="saved-reviews__edit-form">
+                    <textarea
+                      className="saved-reviews__edit-textarea"
+                      value={editForm.text}
+                      onChange={(e) =>
+                        setEditForm({ ...editForm, text: e.target.value })
+                      }
+                    />
+                    <div className="saved-reviews__edit-date-row">
+                      <label className="saved-reviews__edit-date-field">
+                        <span className="saved-reviews__edit-date-label">
+                          Started reading
+                        </span>
+                        <input
+                          className="saved-reviews__edit-date-input"
+                          type="date"
+                          value={editForm.date_started}
+                          onChange={(e) =>
+                            setEditForm({
+                              ...editForm,
+                              date_started: e.target.value,
+                            })
+                          }
+                        />
+                      </label>
+                      <label className="saved-reviews__edit-date-field">
+                        <span className="saved-reviews__edit-date-label">
+                          Finished reading
+                        </span>
+                        <input
+                          className="saved-reviews__edit-date-input"
+                          type="date"
+                          value={editForm.date_finished}
+                          min={editForm.date_started || undefined}
+                          onChange={(e) =>
+                            setEditForm({
+                              ...editForm,
+                              date_finished: e.target.value,
+                            })
+                          }
+                        />
+                      </label>
+                    </div>
+                    <StarRating
+                      label="Rating out of 5 "
+                      rating={editForm.rating}
+                      setRating={(value) =>
+                        setEditForm({ ...editForm, rating: value })
+                      }
+                    />
+                    <div className="saved-reviews__edit-buttons">
+                      <button
+                        className="saved-reviews__save-button"
+                        type="button"
+                        disabled={saving}
+                        onClick={() => handleSave(review.id)}
+                      >
+                        {saving ? "Saving..." : "Save"}
+                      </button>
+                      <button
+                        className="saved-reviews__cancel-button"
+                        type="button"
+                        onClick={cancelEditing}
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    {renderDates(review)}
+                    <p>{review.text}</p>
+                    <StarRating rating={review.rating} readOnly />
+                  </>
+                )}
               </div>
             </div>
           ))}
