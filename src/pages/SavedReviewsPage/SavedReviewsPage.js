@@ -119,9 +119,9 @@ function SavedReviewsPage() {
     if (!started && !finished) return null;
     return (
       <p className="saved-reviews__dates">
-        {started && `Started ${started}`}
-        {started && finished && " · "}
-        {finished && `Finished ${finished}`}
+        {started}
+        {started && finished && " – "}
+        {finished}
       </p>
     );
   };
