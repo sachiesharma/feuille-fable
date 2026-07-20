@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import StarRating from "../../components/StarRating/StarRating";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import "../SavedReviewsPage/SavedReviewsPage.scss";
 import loaderLogo from "../../assets/images/loader.svg";
 import defaultImage from "../../assets/images/cover_not_found.jpg";
@@ -178,16 +180,20 @@ function SavedReviewsPage() {
                     <button
                       className="saved-reviews__action-button"
                       type="button"
+                      title="Edit entry"
+                      aria-label={`Edit your entry for ${review.title}`}
                       onClick={() => startEditing(review)}
                     >
-                      Edit
+                      <EditOutlinedIcon fontSize="inherit" />
                     </button>
                     <button
                       className="saved-reviews__action-button saved-reviews__action-button--danger"
                       type="button"
+                      title="Delete entry"
+                      aria-label={`Delete your entry for ${review.title}`}
                       onClick={() => handleDelete(review)}
                     >
-                      Delete
+                      <DeleteOutlineIcon fontSize="inherit" />
                     </button>
                   </>
                 )}
